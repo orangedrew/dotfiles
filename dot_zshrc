@@ -1,0 +1,22 @@
+export KUBECONFIG=/home/ldruwel/.kube/config
+export GOROOT=/usr/local/go
+export GOPATH=/usr/local/go/packages
+export PATH=$PATH:~/.cargo/bin:/snap/bin:$GOROOT/bin:$GOPATH/bin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+alias k=kubectl 
+alias kgp="kubectl get po -A"
+alias kgs="kubectl get svc -A"
+alias kgi="kubectl get ing -A"
+
+alias grep="grep --color"
+
+alias kubectl=kubecolor
+
+compdef kubecolor=kubectl
+
+alias ls="lsd -l --icon-theme unicode --total-size"
+
+source <(kubectl completion zsh)
+
+cd ~/tfs/Infrastructure/manifests/
